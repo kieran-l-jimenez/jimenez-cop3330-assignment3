@@ -1,2 +1,4 @@
 # Project exclude paths
 /target/
+src/main/java/ex41/names_sorted.txt
+src/main/java/ex42/output.txt

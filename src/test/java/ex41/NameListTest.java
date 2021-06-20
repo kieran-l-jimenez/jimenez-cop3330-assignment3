@@ -23,7 +23,7 @@ class NameListTest {
 
         ArrayList<String> expected = new ArrayList<>(Arrays.asList("Alan, Just", "Armstrong, David", "Cathy, Jen"));
 
-        assertEquals(expected, answer);
+        assertArrayEquals(new ArrayList[]{expected}, new ArrayList[]{answer});
 
     }
     @Test

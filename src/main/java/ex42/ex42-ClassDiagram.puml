@@ -3,27 +3,29 @@
 
 class App {
 void main()
-PersonArray readCSV()
+void makeFile()
 }
 
 App <--"used in" PersonArray
-PersonArray o--"member of" person
+PersonArray o--"member of" Person
 
 class PersonArray {
-person[] EmployeeRecord
+Person[] EmployeeRecord
 int numEmployees
-int longestfname
-int longestlname
-int longestsalary
+int longestFName
+int longestLName
+int longestSalary
+int totalLength
+
 int findLongestString()
 String formatProperLength()
+Person[] readCSV()
 }
 
-class person {
+class Person {
 String fname
 String lname
 int salary
-person newPerson()
 }
 
 @enduml

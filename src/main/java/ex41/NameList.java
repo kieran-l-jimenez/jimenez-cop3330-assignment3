@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class NameList {
@@ -25,8 +24,7 @@ public class NameList {
             File myFile = new File(filePath);
             Scanner myReader = new Scanner(myFile);
 
-            int i;
-            for(i = 0; myReader.hasNextLine(); i++)
+            for(int i = 0; myReader.hasNextLine(); i++)
             {
                 if(i > myStrings.size())
                     myStrings = (ArrayList) Arrays.asList(Arrays.copyOf(myStrings.toArray(), i * 2));
