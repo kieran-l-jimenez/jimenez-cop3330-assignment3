@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class App {
+void main()
+PersonArray readCSV()
+}
+
+App <--"used in" PersonArray
+PersonArray o--"member of" person
+
+class PersonArray {
+person[] EmployeeRecord
+int numEmployees
+int longestfname
+int longestlname
+int longestsalary
+int findLongestString()
+String formatProperLength()
+}
+
+class person {
+String fname
+String lname
+int salary
+person newPerson()
+}
+
+@enduml

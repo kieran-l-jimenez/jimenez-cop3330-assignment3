@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class App{
+void main()
+void makeFile()
+}
+
+App <- NameList
+
+class NameList {
+String[] names
+int numMembers
+
+List<String> alphabetize()
+ArrayList readNames()
+}
+
+@enduml
