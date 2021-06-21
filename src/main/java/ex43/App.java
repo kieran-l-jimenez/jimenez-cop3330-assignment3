@@ -30,4 +30,13 @@ Created ./awesomeco/css/
 -Implement this as a web application that provides the specified site as a zip file.
  */
 public class App {
+    public static void main (String[] args)
+    {
+        //prompt and fill info
+        websiteInfo myWebsite = new websiteInfo();
+        myWebsite = myWebsite.promptInfo();
+
+        //call website generator
+        myWebsite.generateWebsite(myWebsite);
+    }
 }
