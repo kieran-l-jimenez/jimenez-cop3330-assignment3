@@ -39,4 +39,15 @@ If no record is found, prompt again.
  in the JSON file. Ensure the newly added product is immediately available for searching without restarting the program.
  */
 public class App {
+    Scanner in = new Scanner(System.in);
+
+    public static void main (String[] args)
+    {
+
+    }
+
+    /*String prompt()
+    {
+
+    }*/
 }

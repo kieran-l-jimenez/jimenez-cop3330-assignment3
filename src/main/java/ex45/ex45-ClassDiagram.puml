@@ -5,6 +5,7 @@ class App {
 void main()
 String fileNamePrompt()
 void writeToFile()
+String replaceFile()
 }
 
 App <- word
@@ -13,7 +14,7 @@ class word {
 {static} String targetWord
 
 boolean isTarget()
-String determineTarget()
+void determineTarget()
 String replaceWord()
 }
 

@@ -1,5 +1,9 @@
 package ex45;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 /*
  *  UCF COP3330 Summer 2021 Assignment 3 Solution
@@ -29,4 +33,72 @@ Write the output to a new file.
 -Modify the program so it can handle a folder of files instead of a single file.
  */
 public class App {
+    Scanner in = new Scanner(System.in);
+
+    public static void main (String[] args)
+    {
+        App myApp = new App();
+        //set targetWord
+        word myWord = new word();
+        myWord.determineTarget("utilize");
+        //prompt for file name
+        String targetFile = myApp.fileNamePrompt();
+        //attempt to open file
+        //keep reading until end of file
+            //string append(replaceWord(token))
+        String replacementText = myApp.replaceFile(targetFile, myWord);
+        //write filled string to new file
+        myApp.writeToFile(replacementText);
+    }
+
+    String fileNamePrompt(){
+        System.out.print("File: ");
+        return in.next();
+    }
+
+    String replaceFile(String fileName, word myWord){
+        String filePath = "src/main/java/ex45/" + fileName;
+        String ret = "";
+
+        try {
+            File myFile = new File(filePath);
+            Scanner myReader = new Scanner(myFile);
+            myReader.tokens();
+
+            while(myReader.hasNext()) {
+                ret = ret.concat(myWord.replaceWord(myReader.next()));
+                if(myReader.hasNext())
+                    ret = ret.concat(" ");
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return ret;
+    }
+
+    void writeToFile(String replacedText){
+        try {
+            File output = new File("src/main/java/ex45/output.txt");
+
+            if(output.createNewFile())
+            {
+                FileWriter myWriter = new FileWriter(output);
+
+                myWriter.write(replacedText);
+
+                myWriter.close();
+            }
+            else
+            {
+                System.out.println("\"input.txt\" already exists.");
+            }
+        }
+        catch (IOException e)
+        {
+            System.out.println("Error making file.");
+            e.printStackTrace();
+        }
+    }
 }
+
